@@ -136,7 +136,7 @@ def main():
 	topWords = parser(articles_info)
 	#print topWords
 	L = apriori(topWords)
-	L, support_data = apriori(topWords, minsupport=0.5)
+	L, support_data = apriori(topWords, minsupport=0.3)
 	print L
 
 if __name__ == '__main__':
