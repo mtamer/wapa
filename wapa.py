@@ -71,7 +71,7 @@ def parser(results_array):
 	return result
 
 #	Create a list of candidate item sets of size one.
-def createCan(dataset):
+def createCandidates(dataset):
     c1 = []
     for transaction in dataset:
         for item in transaction:
@@ -82,7 +82,7 @@ def createCan(dataset):
     return map(frozenset, c1)
 
 # Returns all candidates that meets a minimum support level
-def scanData(dataset, candidates, min_support):
+def verifyData(dataset, candidates, min_support):
     sscnt = {}
     for tid in dataset:
         for can in candidates:
@@ -116,14 +116,14 @@ def aprioriGenenerate(freq_sets, k):
 
 # Generate a list of candidate item sets
 def apriori(dataset, minsupport=0.5):
-    C1 = createCan(dataset)
+    C1 = createCandidates(dataset)
     D = map(set, dataset)
-    L1, support_data = scanData(D, C1, minsupport)
+    L1, support_data = verifyData(D, C1, minsupport)
     L = [L1]
     k = 2
     while (len(L[k - 2]) > 0):
         Ck = aprioriGenenerate(L[k - 2], k)
-        Lk, supK = scanData(D, Ck, minsupport)
+        Lk, supK = verifyData(D, Ck, minsupport)
         support_data.update(supK)
         L.append(Lk)
         k += 1
@@ -136,9 +136,9 @@ def main():
 	#minsupp = raw_input("Please enter min Support: ")
 	articles_info = getArticles(keyword)
 	topWords = parser(articles_info)
-	#print topWords
+	print topWords
 	L = apriori(topWords)
-	L, support_data = apriori(topWords, minsupport=0.3)
+	L, support_data = apriori(topWords, minsupport=0.2)
 	print L
 
 if __name__ == '__main__':
