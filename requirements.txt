@@ -13,7 +13,7 @@ dj-static==0.0.6
 Django==1.6.5
 django-toolbelt==0.0.1
 dnet==1.12
-ecdsa==0.11
+ecdsa==0.13.3
 enum34==1.0.4
 Flask==0.10.1
 Flask-Bcrypt==0.6.0
