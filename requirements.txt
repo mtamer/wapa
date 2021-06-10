@@ -10,7 +10,7 @@ cssselect==0.9.1
 decorator==3.4.0
 dj-database-url==0.3.0
 dj-static==0.0.6
-Django==1.6.5
+Django==2.2.24
 django-toolbelt==0.0.1
 dnet==1.12
 ecdsa==0.11
