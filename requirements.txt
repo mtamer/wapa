@@ -68,7 +68,7 @@ SQLAlchemy==0.9.8
 sqlalchemy-migrate==0.7.2
 static3==0.5.1
 Tempita==0.5.1
-Twisted==15.4.0
+Twisted==22.1.0
 vboxapi==1.0
 virtualenv==1.11.6
 w3lib==1.11.0
