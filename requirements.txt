@@ -33,7 +33,7 @@ ipaddress==1.0.14
 itsdangerous==0.24
 Jinja2==2.7.3
 lxml==3.4.4
-Mako==1.0.0
+Mako==1.2.2
 MarkupSafe==0.23
 matplotlib==1.4.3
 mechanize==0.2.5
